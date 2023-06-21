@@ -1,0 +1,85 @@
+// CONFIGURACIONES
+
+$grey-100: #F9F9F9;
+$grey-200: #E9E9E9;
+$grey-300: #DADADA;
+$grey-400: #CBCBCB;
+$grey-500: #C4C4C4;
+$grey-600: #ACACAC;
+$grey-700: #7B7B7B;
+$grey-800: #4A4A4A;
+$grey-900: #191919;
+// Verde
+$green-100: #E6FEEE;
+$green-200: #B4FBCB;
+$green-300: #81F8A9;
+$green-400: #4FF587;
+$green-500: #36F475;
+$green-600: #13F25D;
+$green-700: #0AB141;
+$green-800: #066A27;
+$green-900: #02230D;
+// Rojo
+$red-100: #FEE8E6;
+$red-200: #FBB9B4;
+$red-300: #F88A81;
+$red-400: #F55B4F;
+$red-500: #F44336;
+$red-600: #F22213;
+$red-700: #B1150A;
+$red-800: #6A0D06;
+$red-900: #230402;
+
+%flex-center-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+%flex-center-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// SCSS
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    background-color: $grey-100;
+    @extend %flex-center-column;
+    button {
+        background-color: $grey-200;
+        padding: 3px 6px;
+        transition: all .2s ease-in-out;
+        cursor: pointer;
+        p {
+            color: $grey-800;
+            transition: all .2s ease-in-out;
+        }
+        &:hover {
+            background-color: $grey-800;
+            p {
+                color: $grey-200;
+            }
+        }
+    }
+}
+
+@import './../components/Modal/Modal';
