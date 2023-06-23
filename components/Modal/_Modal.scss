@@ -1,15 +1,15 @@
 .container-modal {
     width: 100%;
     height: 100vh;
-    background-color: rgba(74,74,74,0.2);
-    box-shadow: 1px 3px 4px rgba(0,0,0,0.15);
-    backdrop-filter: blur(4px);
-    // background-color: rgba(74,74,74,0);
-    // box-shadow: 1px 3px 4px rgba(0,0,0,0);
-    // backdrop-filter: blur(0px);
+    // background-color: rgba(74,74,74,0.2);
+    // box-shadow: 1px 3px 4px rgba(0,0,0,0.15);
+    // backdrop-filter: blur(4px);
+    background-color: rgba(74,74,74,0);
+    box-shadow: 1px 3px 4px rgba(0,0,0,0);
+    backdrop-filter: blur(0px);
     position: fixed;
-    top: 0;
-    // top: -100%;
+    // top: 0;
+    top: -100%;
     z-index: 100;
     transition: .4s ease-in-out;
     @extend %flex-center;
@@ -17,10 +17,10 @@
         width: auto;
         height: auto;
         position: relative;
-        top: inherit;
-        // top: -100%;
-        transform: scale(1);
-        // transform: scale(0);
+        // top: inherit;
+        top: -100%;
+        // transform: scale(1);
+        transform: scale(0);
         transition: .4s ease-in-out;
         @extend %flex-center-column;
         .circle-status {
@@ -91,8 +91,8 @@
         }
         .box-content {
             width: 500px;
-            height: 215px;
-            // height: 0px;
+            // height: 215px;
+            height: 0px;
             background-color: $grey-100;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
             border-radius: 15px 10px;
@@ -106,12 +106,78 @@
                 text-align: center;
                 color: $green-700;
                 text-shadow: 0px 0px 8px rgba($green-100, 1);
-                opacity: 1;
-                // opacity: 0;
+                // opacity: 1;
+                opacity: 0;
                 transition: .3s ease-in-out;
                 font-family: 'Lato', sans-serif;
                 font-weight: 700;
                 font-size: 18px;
+            }
+            button {
+                width: auto;
+                height: auto;
+                background-color: $green-300;
+                border: none;
+                position: absolute;
+                cursor: pointer;
+                opacity: 0;
+                transition: .3s ease-in-out;
+                bottom: 24px;
+                p {
+                    width: initial;
+                    padding: 6px 24px;
+                    color: $green-800;
+                    opacity: 1;
+                    font-family: 'Lato', sans-serif;
+                    font-weight: 400;
+                    font-size: 15px;
+                }
+            }
+            &.green {
+                p {
+                    color: $green-700;
+                }
+                button {
+                    background-color: $green-300;
+                    p {
+                        color: $green-800;
+                    }
+                }
+            }
+            &.red {
+                p {
+                    color: $red-600;
+                }
+                button {
+                    background-color: $red-300;
+                    p {
+                        color: $red-800;
+                    }
+                }
+            }
+            @media ( max-width: 800px) {
+                width: 90%;
+            }
+        }
+        .background-bottom {
+            width: 90%;
+            height: 0px;
+            // height: 94px;
+            box-shadow: 0px 0px 8px rgba(0,0,0,0.15);
+            border-radius: 10px 10px 15px 10px;
+            position: absolute;
+            bottom: 0;
+            // bottom: -24px;
+            z-index: 1;
+            transition: .4s ease-in-out;
+            &.green {
+                background: $green-400;
+            }
+            &.red {
+                background: $red-400;
+            }
+            @media ( max-width: 800px) {
+                width: 80%;
             }
         }
     }
